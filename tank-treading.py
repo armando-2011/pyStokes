@@ -21,6 +21,7 @@ Re = 0.02
 ks = 0.0221311
 u = 0.0066
 tau = 1.0
+maxit = 10
 
 # ----------------------------------------------------------------
 # 1. Crear la malla Euleriana para el fluido
@@ -91,7 +92,7 @@ vs.guardarFluido(x,y,z,dx,rho,u_x,u_y,u_z,0)
 print "Iniciando...."
 tic = time.clock()
 
-for t in xrange(1,10000):
+for t in xrange(1,maxit):
     print "Paso: ", t
     # ----------------------------------------------------------------
     # 3.1 Propagar velocidad hacia la membrana INTERPOLATION

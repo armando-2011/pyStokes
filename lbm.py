@@ -44,10 +44,7 @@ dt = 4.26e-4
 def inicializar(x,y,z):
     f = np.zeros((2,x,y,z,19))
     f[0:2,:,:,:,:]=w
-    u_x = np.zeros((x,y,z))
-    for i in xrange(0,x):
-        u_x[i,:,:] = -vel + i*
-    return f, u_x
+    return f
     
 #--------------------------------------------------------------------
 # Funcion para calcular propiedades macroscopicas Rev: 16/Oct/2010
@@ -190,9 +187,9 @@ def collide(f,s,df,x,y,z,omega):
 def main():
     # Dimensiones de la red 
     H = 100.0
-    x = 10
-    y = 10
-    z = 10
+    x = 25
+    y = 25
+    z = 25
     dx = H/x
     omega = 1.0
     df = np.zeros((x,y,z,3))
@@ -214,8 +211,7 @@ def main():
     # ------------------------------------------
     print "Iniciando..."
     tic = time.clock()
-    
-    for t in xrange(15):
+    for t in xrange(30):
         # 1. Calcular Variables macroscopicas
         print "Paso:", t
         p = fluido(f,s,x,y,z)
