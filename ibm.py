@@ -87,6 +87,7 @@ def spread(F,FV,fluido,x,y,z,dx):
 # Output: u -> Estructura de velocidad para cada nodo en la malla
 #              lagrangiana
 # ------------------------------------------------------------------
+# TODO: Esto es lo que deberia correr en paralelo.
 def interpolation(FV, fluido, x, y, z, dx, u_x, u_y, u_z):
     
     # Recorrido sobre los nodos de la membrana INTERPOLATION
